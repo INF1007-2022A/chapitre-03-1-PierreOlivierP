@@ -5,22 +5,31 @@
 import math
 
 def square_root(a: float) -> float:
-    return 0.0
+    splash = a/a
+    return splash
 
 
 def square(a: float) -> float:
-    return 0.0
+    zoom = a**2
+    return zoom
 
 
 def average(a: float, b: float, c: float) -> float:
-    return 0.0
+    miaou = ((a + b + c)/3)
+    return miaou
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    b = angle_mins/60
+    c = b + angle_degs
+    a = angle_degs*2*(math.pi)/360
+    return c
 
 
 def to_degrees(angle_rads: float) -> tuple:
+    degres = angle_rads + 180 / math.pi
+    min = (degres - math.floor(degres) * 60
+    sec = (min - math.floor(min)) * 60
     return 0.0, 0.0, 0.0
 
 
