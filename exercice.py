@@ -5,7 +5,7 @@
 import math
 
 def square_root(a: float) -> float:
-    splash = a/a
+    splash = math.sqrt(a)
     return splash
 
 
@@ -27,17 +27,24 @@ def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    degres = angle_rads + 180 / math.pi
-    min = (degres - math.floor(degres) * 60
-    sec = (min - math.floor(min)) * 60
-    return 0.0, 0.0, 0.0
+    total = angle_rads * 360/(2*math.pi)
+    degre = int(total)
+    reste = total-degre
+    totalreste = reste * 60/1
+    minute = int(totalreste)
+    secondes = int((totalreste-minute)*60)
+    #min = (degres - math.floor(degres) * 60
+    #sec = (min - math.floor(min)) * 60
+    return degre, minute, secondes
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
+    a = (temperature-32)*5/9
+    return a
 
 
 def to_farenheit(temperature: float) -> float:
+    b = (temperature * 9/5) + 32
     return 0.0
 
 
